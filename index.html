@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deliverable Snapshot</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="home">
+        <h1>Select Deliverable</h1>
+        <button onclick="selectDeliverable('Deliverable1')">Deliverable 1</button>
+        <button onclick="selectDeliverable('Deliverable2')">Deliverable 2</button>
+    </div>
+
+    <div id="snapshot-selection" class="hidden">
+        <h1>Select or Create Snapshot</h1>
+        <button onclick="selectExistingSnapshot()">Select Existing Snapshot</button>
+        <button onclick="createNewSnapshot()">Create New Snapshot</button>
+        <button onclick="goBack('home')">Back</button>
+    </div>
+
+    <div id="existing-snapshot" class="hidden">
+        <h1>Select Existing Snapshot</h1>
+        <form id="existing-snapshot-form">
+            <label for="snapshot-select">Select Snapshot:</label>
+            <select id="snapshot-select" required></select>
+            <button type="submit">Generate Report</button>
+        </form>
+        <button onclick="goBack('snapshot-selection')">Back</button>
+    </div>
+
+    <div id="new-snapshot" class="hidden">
+        <h1>Create New Snapshot</h1>
+        <form id="snapshot-form">
+            <label for="instance1">Select Instance 1:</label>
+            <select id="instance1" required></select>
+            <label for="instance2">Select Instance 2:</label>
+            <select id="instance2" required></select>
+            <label for="snapshot-name">Snapshot Name:</label>
+            <input type="text" id="snapshot-name" required>
+            <button type="submit">Create Snapshot</button>
+        </form>
+        <button onclick="goBack('snapshot-selection')">Back</button>
+    </div>
+
+    <div id="report-page" class="hidden">
+        <h1>Generate Report</h1>
+        <p>Snapshot: <span id="selected-snapshot"></span></p>
+        <!-- Add report generation logic here -->
+        <button onclick="goBack('existing-snapshot')">Back</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
