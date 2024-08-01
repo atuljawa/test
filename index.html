@@ -17,7 +17,7 @@
         <h1>Select or Create Snapshot</h1>
         <button onclick="selectExistingSnapshot()">Select Existing Snapshot</button>
         <button onclick="createNewSnapshot()">Create New Snapshot</button>
-        <button onclick="goBack('home')">Back</button>
+        <button onclick="goBack()">Back</button>
     </div>
 
     <div id="existing-snapshot" class="hidden">
@@ -27,7 +27,7 @@
             <select id="snapshot-select" required></select>
             <button type="submit">Generate Report</button>
         </form>
-        <button onclick="goBack('snapshot-selection')">Back</button>
+        <button onclick="goBack()">Back</button>
     </div>
 
     <div id="new-snapshot" class="hidden">
@@ -41,14 +41,14 @@
             <input type="text" id="snapshot-name" required>
             <button type="submit">Create Snapshot</button>
         </form>
-        <button onclick="goBack('snapshot-selection')">Back</button>
+        <button onclick="goBack()">Back</button>
     </div>
 
     <div id="report-page" class="hidden">
         <h1>Generate Report</h1>
         <p>Snapshot: <span id="selected-snapshot"></span></p>
         <!-- Add report generation logic here -->
-        <button onclick="goBack('existing-snapshot')">Back</button>
+        <button onclick="goBack()">Back</button>
     </div>
 
     <script src="script.js"></script>
